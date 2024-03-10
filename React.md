@@ -279,6 +279,25 @@
     To redirect on page 404 if user looks for some not existed page we can use route with '/*' characters. Router will use this way if no one another ways were not match.
 
     We can create some component that will show to user that he's on wrong way.
+
+    Also we can handle it by using errorElement field:
+
+        const router = {
+            path: '/'
+            component: <Root />
+            loader: rootLoader,
+
+            errorElement: <Page404 />,
+
+            children: [
+                {
+                    path: '/user',
+                    component: <User />,
+                    loader: userLoader,
+                    children: [...]
+                }
+            ]
+        }
     
     ---
     </details>
@@ -350,48 +369,114 @@
 
 1.  <details><summary>Redux</summary>
 
+    Redux is one of the state management libraries that provide a comfortable workflow with the global state of application based on the Context API.
+
+    The global state can be used as an application state or as a seperate part of it. We can wrap any part of app by the chosen "context" provider and use this state in any child of this component.
+
+    In React applications we can use react-redux library that provides us more effective way to interact with global state by using react patterns such as hooks.
     
     ---
     </details>
 
-1.  <details><summary>HOC connect()</summary>
+3.  <details><summary>Rules of Redux</summary>
 
-    
-    ---
-    </details>
+    There is main redux rules:
 
-1.  <details><summary>Middlewares</summary>
-
-    
-    ---
-    </details>
-
-1.  <details><summary>Memoised selector</summary>
-
-    
-    ---
-    </details>
-
-1.  <details><summary>Normalized state</summary>
+    - Single Source of Truth - means that should be existed only one global state and only it must be as a Source of Truth. The current application state must be received only from it.
+    - State is immutable - means that the state is read-only. We can make some changes directly in state. Each changes should be make by reducers
+    - Reducers is a pure functions that always return a new state based on previous state and received action.
+    - One Way Data Flow - means that the data have only one way from components - through  dispatch to store
 
     
     ---
     </details>
 
-1.  <details><summary>useSelector and useDispatch</summary>
+5.  <details><summary>HOC connect()</summary>
 
+    This is react-redux High Ordered Function that returns received component that will connected with redux state. We should provide 2 functions that will handle our work with state.
+
+    They're mapStateToProps and mapDispatchToProps.
+
+    mapStateToProps will handle what exact part of state we'll receive, meanwhile mapDispatchToProps will handle state changes
     
     ---
     </details>
 
-1.  <details><summary>Rules of Redux</summary>
+7.  <details><summary>Middlewares</summary>
 
+    Middleware - is a general development concept of functions that work with data that we passed in them and can make some changes in the data.
     
     ---
     </details>
 
-1.  <details><summary>Redux lifecycle</summary>
+8.  <details><summary>Normalized state</summary>
+ 
+    WORK IN PROGRESS
+    
+    ---
+    </details>
+    
+9.  <details><summary>Reducers and Actions</summary>
 
+    Reducer is a pure function that always receive a state and an action and then returns state. It's waiting for action with type field and based on this type should implement some logic of state handling. Usually it uses switch case operator to figuring out what the changes should be applied and anyway returns state.
+
+    Action is an object that must contain a "type" property. It's can contain any fields to but usually one more field exists called as "payload". The type field may be a string with name of current action, meanwhile payload is an optional field that contains some data that should be stored.
+
+        const reducer = (state, action) => {
+            switch(action.type) {
+                case "ADD_USER":
+                    state.users = {
+                        ...state.users,
+                        action.payload
+                    }
+                default:
+                    return state
+            }
+        }
+
+        const ADD_USER_ACTION = { type: "ADD_USER", payload: userObject }
+    
+    ---
+    </details>
+
+10. <details><summary>useSelector and useDispatch</summary>
+
+    They're hooks to interact with redux state.
+    
+    The useSelector is selector for our state. We can get some piece of state with it.
+
+        const userState = useSelector(state => state.users)
+    
+    useDispatch is a hook that returns a function to handle state changes. It sends an action to store and in store will be applied changes based on this action.
+
+        const dispatch = useDispatch()
+
+        dispatch({ type: 'ADD_USER', payload: newUser })
+
+        or
+
+        const ADD_USER_ACTION = { type: "ADD_USER", payload: userObject }
+        dispatch(ADD_USER_ACTION)
+
+    ---
+    </details>
+
+11. <details><summary>Redux lifecycle</summary>
+ 
+    Everything begins from UI. When we want to change something in state we'll handle some event by handler that should calls dispatch function and put in it some action based on current event.
+
+    - The action starts it way to store through dispatcher and may be modified by middlewares. 
+    - Then the data goes through reducers and when some of them figure out received action type, they're returning a new state.
+    - Next step is updated data going to UI
+    
+    ---
+    </details>
+
+12. <details><summary>Memoised selector</summary>
+ 
+    This selector will helps in cases when we want to save some part of data (as a list of some IDs) and do not re-render or re-calculate something. 
+
+    While a common selector will be called each time when component was rerendered, a memoised one will not. It will cash the date and return cashed value each time if an arguments were not changed.
     
     ---
     </details>
