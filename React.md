@@ -122,6 +122,12 @@
 
 [To top](#react-interview-questions)
 
+1. <details><summary>Lifecycle of react components</summary>
+    There are three stages. Mounting, updating and unmounting.
+
+    Class and Functional components have itself flows to work with lifecycles. Each of them can manipulate it state based on current stage.
+    </details>
+
 1.  <details><summary>Class lifecycle methods</summary>
     They provide us with the opportunity to work with the state of a class component at different stages of its lifecycle. Due to them, we can manipulate data during component mounting, updating, or unmounting.
 
@@ -139,19 +145,35 @@
     </details>
     
 3.  <details><summary>useLayoutEffect</summary>
+    This is a hook that fires before a browser repaints the screen. It's should be noted that the useLayoutEffect works synchroniously instead of synchronous work as works useEffect
 
+    It's also awaits for callback that also can return a clean-up function and dependencies array and will call provided function based on component lifecycle and dependencies.
     </details>
     
 4.  <details><summary>Dependencies</summary>
+    Some of hooks awaits for array as a dependencies.
 
+    Dependencies array it's an entity that will checked by any hook that awaits for it while something changes in state. If something from state was changed and it was as dependency in the array - it will trigger callback.
     </details>
     
-5.  <details><summary>Custom hooks</summary>
-
+6.  <details><summary>Custom hooks</summary>
+    Based on provided built-in hooks we can create a custom hooks. Usually they're combinations of pair or more hooks. It's usefull when we want to create a short-hand of some repeatable logic based on hooks.
     </details>
     
-6.  <details><summary>React render phases</summary>
+7.  <details><summary>React render phases</summary>
+    Before something will be rendered in browser, three render phases should be gone.
 
+    Triggering, reconciling, commiting to DOM
+
+    The triggering phase depends on two events. Initial render and state updating.
+
+    Initial render calls when the component should be rendered first time on screen. And every next update or "re-creating" calls re-render.
+
+    After the render triggering, React compares the current Virtual DOM with the previous one to determine what needs to be rendered. It may call initial render or re-render depends on component existing in Virtual DOM and it will calls react.root component if it was not existed or the function component that state was changed.
+
+    And the next stage is a commiting that caused on initial rendering or if something was changed. React will make changes in DOM if there is a difference between redners. 
+    During initial rendering React will calls appendChild() DOM API function to put DOM Nodes that should be rendered on screen.
+    Meanwhile the re-rendering process will make only minimal neccessary operations to make the DOM up-to-date state.  
     </details>
 
 ## Lecture #4 - React router
