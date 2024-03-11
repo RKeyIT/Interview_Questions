@@ -15,6 +15,23 @@
 10. [Typescript](#lecture-10---typescript)
 11. [Testing, debugging, Agile](#lecture-11---testing-debugging-agile)
 
+
+## Random questions
+- Types in JS
+- Array methods
+- How iterate object keys
+- Event Loop
+- Why we use React? 
+- React dom library 
+- JSX
+- props 
+- React hooks
+- useEffect
+- useRef
+- useState (batching)
+- LocalStorage, Cookie, SessionStorage differences
+
+
 ## Lecture #1 - React basics #1
 
 [To top](#react-interview-questions)
