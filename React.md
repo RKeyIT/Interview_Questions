@@ -525,25 +525,43 @@
 [To top](#react-interview-questions)
 
 1.  <details><summary>RTK Query</summary>
+    Redux Toolkit Query is an extension over redux that provide for us another level of abstraction to free us from writting much boiler plate code.
 
+    It's provide more comfortable new features such as configureStore, createSlice, createApi, redux devtools and much anothers to make our development experience much faster and effectively.
     
     ---
     </details>
 
-1.  <details><summary>createAsyncThunk</summary>
 
+2.  <details><summary>configureStore</summary>
+    It's a comfortable way to setup store. configureStore is waiting for reducers that we can provide from slices or from fucntion combineReducers that may fit them all in one variable. It's may accept midlewares as well.
+
+    ---
+    </details>
+
+3.  <details><summary>createSlice</summary>
+    createSlice - is a function that awaits for settings object that should include name of slice, initial state, reducers, extraReducers and returns one same-named part of global state. That's why it's calls as slice.
     
     ---
     </details>
 
-1.  <details><summary>createApi</summary>
 
+2.  <details><summary>extraReducers</summary>
+    That is additional reducers that provides for us a feature to react when some of actions was comes from dispatch. We always have an access to current store and received action and can implement some logic based on them.
+
+    ---
+    </details>
+
+3.  <details><summary>createAsyncThunk</summary>
+    It is an action that works with asynchronous things such us data fetching. It's waiting for name of action that usually used as string, and asynchronous function that returns some date. It's works as an action and we can react on it with our extraReducers.
     
     ---
     </details>
 
-1.  <details><summary></summary>
+4.  <details><summary>createApi</summary>
+    It's a modern decision to implement more comfortable interaction with API. createApi is waiting for an object with settings such as reducerPath, baseQuery and endpoints.
 
+    endpoints is a function that receive a builder object and should return an object with different methods based on current needs. It can be qurey to get something from server or mutation to send something to server.
     
     ---
     </details>
