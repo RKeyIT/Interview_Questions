@@ -17,19 +17,41 @@
 
 
 ## Random questions
-- Types in JS
-- Array methods
+- Data types in JS
+- Differences between prymitives and object
+- Array methods(5-6 examples)
+- Difference between forEach and Map
+- Difference between var and let. What problem solves let?
+- Difference between arrow function and function declaration
+- Closure
 - How iterate object keys
 - Event Loop
-- Why we use React? 
-- React dom library 
-- JSX
-- props 
+- Asyncronious and asyncronious difference + microtasks/macrotasks(which events in micro/macro)
+- Why do we need to use React and for what puposes it was invented
+- Where we can use React(tricky) - reactNative, desktop applications(teams, slack)
+- React-Dom library(what does react-dom do)
+- What do you know about JSX
+- How does JSX transform in JS
+- What types of components we have
+- Did you have an experience writing class components? :D
+- Could we provide a callback inside SetState function in class component?(tricky)
+- What is a props
+- Can we change props?
+- Have we replace lifecycle methods from class components into function components?
 - React hooks
+- What hooks do you know?
 - useEffect
 - useRef
+- What purposes for useRef?
+- Can we provide any data type into useRef?
 - useState (batching)
-- LocalStorage, Cookie, SessionStorage differences
+- (sandbox) useEffect with empty dependencies array, useEffect with some depend in the array, how can we sumulate componentWillUnmount in func comp, useEffect without second argument
+- (sandbox) how useEffect work, when dependency changed
+- Difference between React Synthetic event and browser native event
+- Context API. Which kind of problem it solves?
+- What kind of storages we have in browser?
+- Difference between local and session storages?
+- Cookie - what the main difference between storages and cookies
 
 
 ## Lecture #1 - React basics #1
