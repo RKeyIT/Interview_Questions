@@ -572,31 +572,78 @@
 [To top](#react-interview-questions)
 
 1.  <details><summary>React patterns</summary>
-
+  
+    - Props destructuring
+    - Conditional rendering
+    - Array rendering
+    - Children rendering
+    - High Order Component
     
     ---
     </details>
 
-1.  <details><summary>Key</summary>
+2.  <details><summary>Key</summary>
 
+    A key is a special prop that implicitly exist in any JSX entity in react. Due this prop react is figuring out what and where was changed.
+
+    We should use the key explicitly when we're rendering an array of something as a list of JSX elements. The JSX element that we're returning from the map function should have explicitly setled key that must be a unique value.
+
+    That means if we'll render a dynamic array, indexes of that array will not be optimal decision to set them as keys. Better variant - it's using IDs of iterable entities if theys exist, or pre-set IDs with using some library before mapping this data. 
     
     ---
     </details>
 
-1.  <details><summary>Suspense</summary>
+3.  <details><summary>Suspense</summary>
 
+    It's a special component that can provide some component instead of currently downloadable. 
+
+    Currently it's working with lazy components that we can create by lazy() function that will dinamycaly import specified component.
     
     ---
     </details>
 
-1.  <details><summary>Fiber</summary>
+3.  <details><summary>React Reconciliation</summary>
 
+    It's a process of comparing the current tree with the work-in-progress tree, followed by an optimized way to commit the changes from the work-in-progress tree to the current tree. These changes are applied to the virtual DOM, resulting in the updated virtual DOM becoming the new current tree.
     
     ---
     </details>
 
-1.  <details><summary>Parallel processes in React</summary>
+4.  <details><summary>Fiber</summary>
 
+    Fiber is a new conception since React 16 that provide a more effective way of reconciliation than earlier stack-based. 
+    
+    It's includes:
+    - Prioritisation
+    - Pausing
+    - Resuming
+    - Aborting
+    - Concurrency
+
+    > [!WARNING]
+    > The problematic of previous stack-based approach is a list of neccessary performance issues:
+    > - Lack of interruption
+    > - Synchronous process
+    > - Inefficient updates
+    > - Limited prioritization
+
+    > [!TIP]
+    > We can think of a single fiber as a virtual stack frame. In simple terms, a fiber represents a unit of work with its own virtual stack. 
+    
+    In the previous implementation of the reconciliation algorithm, React created a tree of objects (React elements) that are immutable and traversed the tree recursively.
+
+    In the current implementation, React creates a tree of fiber nodes that can mutate. The fiber node effectively holds the component’s state, props, and underlying DOM element it renders to.
+
+    
+    
+    ---
+    </details>
+
+5.  <details><summary>Parallel processes in React</summary>
+
+    Due to new conception as Fiber the React have an option to make state changes asynchronously and in more effective way.
+    
+    This also will prevent unneccessary re-renders due to "batching" coception that will collect same tasks and will accept them in only one time
     
     ---
     </details>
@@ -617,56 +664,65 @@
     </details>
 
 2.  <details><summary>useMemo & useCallback</summary>
-
+   
+    s
     
     ---
     </details>
 
 3.  <details><summary>memo(component, arePropsEqual?)</summary>
 
+    s
     
     ---
     </details>
 
 4.  <details><summary>PureComponent</summary>
 
-    
+    s
+
     ---
     </details>
 
 5.  <details><summary>lazy()</summary>
 
-    
+    s
+
     ---
     </details>
 
 6.  <details><summary>Virtualisation</summary>
 
-    
+    s
+
     ---
     </details>
 
-6.  <details><summary>Bundle optimisation</summary>
+7.  <details><summary>Bundle optimisation</summary>
 
-    
+    s
+
     ---
     </details>
 
-6.  <details><summary>Web workers</summary>
+8.  <details><summary>Web workers</summary>
 
-    
+    s
+
     ---
     </details>
     
-6.  <details><summary>Image optimisation</summary>
+9.  <details><summary>Image optimisation</summary>
 
-    
+    s
+
     ---
     </details>
     
-6.  <details><summary>Reselect</summary>
+10. <details><summary>Reselect</summary>
 
-    
+    s
+
     ---
     </details>
 
@@ -678,13 +734,15 @@
 
 1.  <details><summary></summary>
 
-    
+    s
+
     ---
     </details>
 
 1.  <details><summary></summary>
 
-    
+    s
+
     ---
     </details>
 
@@ -694,13 +752,15 @@
 
 1.  <details><summary></summary>
 
-    
+    s
+
     ---
     </details>
 
 1.  <details><summary></summary>
 
-    
+    s
+
     ---
     </details>
 
@@ -711,12 +771,14 @@
 
 1.  <details><summary></summary>
 
-    
+    s
+
     ---
     </details>
 
 1.  <details><summary></summary>
 
+    s
     
     ---
     </details>
