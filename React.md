@@ -2,7 +2,7 @@
 
 ### Subjects
 
-0.
+0. REACT JUNIOR LEVEL QUESTIONS 
 1. [React basics #1](#lecture-1---react-basics-1)
 2. [React basics #2](#lecture-2---react-basics-2)
 3. [React Intermediate](#lecture-3---react-intermediate)
@@ -14,63 +14,7 @@
 9. [External Libraries](#lecture-9---external-libraries)
 10. [Typescript](#lecture-10---typescript)
 11. [Testing, debugging, Agile](#lecture-11---testing-debugging-agile)
-
-
-## Random questions
-- Data types in JS
-- Differences between prymitives and object
-- Array methods(5-6 examples)
-- Difference between forEach and Map
-- Difference between var and let. What problem solves let?
-- Difference between arrow function and function declaration
-- Closure
-- How iterate object keys
-- Event Loop
-- Asyncronious and asyncronious difference + microtasks/macrotasks(which events in micro/macro)
-- Why do we need to use React and for what puposes it was invented
-- Where we can use React(tricky) - reactNative, desktop applications(teams, slack)
-- React-Dom library(what does react-dom do)
-- What do you know about JSX
-- How does JSX transform in JS
-- What types of components we have
-- Did you have an experience writing class components? :D
-- Could we provide a callback inside SetState function in class component?(tricky)
-- What is a props
-- Can we change props?
-- Have we replace lifecycle methods from class components into function components?
-- React hooks
-- What hooks do you know?
-- useEffect
-- useRef
-- What purposes for useRef?
-- Can we provide any data type into useRef?
-- useState (batching)
-- (sandbox) useEffect with empty dependencies array, useEffect with some depend in the array, how can we sumulate componentWillUnmount in func comp, useEffect without second argument
-- (sandbox) how useEffect work, when dependency changed
-- Difference between React Synthetic event and browser native event
-- Context API. Which kind of problem it solves?
-- What kind of storages we have in browser?
-- Difference between local and session storages?
-- Cookie - what the main difference between storages and cookies
-
-
-- Все что вы знаете про ООП
-- Что происходит, когда браузер получил URL
-- Хранилища данных: cookies, web storages
-- Все что вы знаете про Fiber
-- Расскажите как в portals происходит propagation
-- Перечислите все хуки
-- Зачем нужен useRef 
-- Все что вы знаете про Redux и его принципы
-- Что такое чистая функция
--  Доп. вопрос: чистая ли, если что-то логирует  
-- Разница между Synthetic Event и браузерными событиями
-- Оптимизации: useMemo, useCallback
-- Какие методы жизненного цикла заменяет useEffect
-- Вопрос с трансляцией экрана: typeof
-- Вопрос с трансляцией экрана: приведение типов
-- Вопрос с трансляцией экрана: передача контекста
-- Вопрос с трансляцией экрана: цепочки наследования
+12. [Random questions](#random-questions)
 
 
 ## Lecture #1 - React basics #1
@@ -78,6 +22,7 @@
 [To top](#react-interview-questions)
 
 1.  <details><summary>What is the React</summary>
+    
     React is a JavaScript library that implement a component approach of WEB Applications development. It's uses a JSX extention that allows us to create a fully independed stateful or stateless components. Due to HTML-like code with JS code in the same file are 
     reaching the really standalone components.
 
@@ -87,6 +32,7 @@
     </details>
 
 2.  <details><summary>What is the JSX</summary>
+    
     It's a JavaScript extension with full name as JavaScript XML. This extension uses to achieve HTML-like syntax in JavaScript code.
 
     However, HTML-like syntax have a little difference from the thruly HTML. The difference is in some attributes name such as className or htmlFor
@@ -96,6 +42,7 @@
 
 
 3.  <details><summary>What is the SPA</summary>
+
     Abbreviature SPA means a Single-Page Application that used for describing applications that can be used without any reloades between page changes.
 
     This behavior can be reached by using react-router library for example.
@@ -104,18 +51,28 @@
     </details>
     
 4.  <details><summary>DOM</summary>
+
     Abbreviature that described as a Document Object Model. It's a tree-node data structure that used by browsers to serve the HTML document and interact with it.
     
     ---
     </details>
     
 5.  <details><summary>Virtual DOM</summary>
+ 
     <b>The Virtual DOM</b> is the lightweight copy of the <u>original DOM</u> represented as a JavaScript object. React can reach the really fast changing speed due this representation instead of working with tree-like structure.
     
     ---
     </details>
-        
-6.  <details><summary>What's the difference between class and functional components?</summary>
+       
+6.  <details><summary>React-DOM</summary>
+
+    react-dom library is ...
+    
+    ---
+    </details>
+
+7.  <details><summary>What's the difference between class and functional components?</summary>
+    
     The class components comes from the OOP. This approach means that we're should use the required render() method to render some JSX. Also theese components have an access to lifecycle methods such as componentDidMount, componentDidUpdate, componentWillUnmount and some count of another methods to provide the component flexibility.
 
     Meanwhile, functional components are a simple functions that simply should return a JSX markup. There is hooks exists to reach the next level of component flexibility. 
@@ -125,13 +82,15 @@
     ---
     </details>
         
-7.  <details><summary>What is the key?</summary>
+8.  <details><summary>What is the key?</summary>
+    
     The key is a special prop in React that implicitly exist in any JSX entity. This prop helps React to identefy the changes into components. We must to use the key explicitly when we should to render some array of data as a list of components or JSX elements.
     
     ---
     </details> 
 
-8.  <details><summary>What are hooks?</summary>
+9.  <details><summary>What are hooks?</summary>
+    
     Hooks are special conceptions in functional components provide us comfortable controls of data and components workflows. They allows the more expressive and understandable approach instead of class lifecycle methods and they can be use more flexible.
     
     Some of them can have a dependecies array that provide a light-understandable control of data or component dependencies.
@@ -139,7 +98,8 @@
     ---
     </details>
 
-9. <details><summary>Component renders.</summary>
+10. <details><summary>Component renders.</summary>
+    
     When the component appears on the screen in first time or after unmounting it means that <b>initial render</b> was caused
 
     If some of reactive values of existed component were changed or the parent component was re-rendered it will calls <b>re-render</b> of component
@@ -436,7 +396,7 @@
     ---
     </details>
 
-3.  <details><summary>Rules of Redux</summary>
+2.  <details><summary>Rules of Redux</summary>
 
     There is main redux rules:
 
@@ -449,7 +409,7 @@
     ---
     </details>
 
-5.  <details><summary>HOC connect()</summary>
+3.  <details><summary>HOC connect()</summary>
 
     This is react-redux High Ordered Function that returns received component that will connected with redux state. We should provide 2 functions that will handle our work with state.
 
@@ -460,21 +420,21 @@
     ---
     </details>
 
-7.  <details><summary>Middlewares</summary>
+4.  <details><summary>Middlewares</summary>
 
     Middleware - is a general development concept of functions that work with data that we passed in them and can make some changes in the data.
     
     ---
     </details>
 
-8.  <details><summary>Normalized state</summary>
+5.  <details><summary>Normalized state</summary>
  
     WORK IN PROGRESS
     
     ---
     </details>
     
-9.  <details><summary>Reducers and Actions</summary>
+6.  <details><summary>Reducers and Actions</summary>
 
     Reducer is a pure function that always receive a state and an action and then returns state. It's waiting for action with type field and based on this type should implement some logic of state handling. Usually it uses switch case operator to figuring out what the changes should be applied and anyway returns state.
 
@@ -497,7 +457,7 @@
     ---
     </details>
 
-10. <details><summary>useSelector and useDispatch</summary>
+7.  <details><summary>useSelector and useDispatch</summary>
 
     They're hooks to interact with redux state.
     
@@ -519,7 +479,7 @@
     ---
     </details>
 
-11. <details><summary>Redux lifecycle</summary>
+8.  <details><summary>Redux lifecycle</summary>
  
     Everything begins from UI. When we want to change something in state we'll handle some event by handler that should calls dispatch function and put in it some action based on current event.
 
@@ -530,7 +490,7 @@
     ---
     </details>
 
-12. <details><summary>Memoised selector</summary>
+9.  <details><summary>Memoised selector</summary>
  
     This selector will helps in cases when we want to save some part of data (as a list of some IDs) and do not re-render or re-calculate something. 
 
@@ -565,19 +525,19 @@
     </details>
 
 
-2.  <details><summary>extraReducers</summary>
+4.  <details><summary>extraReducers</summary>
     That is additional reducers that provides for us a feature to react when some of actions was comes from dispatch. We always have an access to current store and received action and can implement some logic based on them.
 
     ---
     </details>
 
-3.  <details><summary>createAsyncThunk</summary>
+5.  <details><summary>createAsyncThunk</summary>
     It is an action that works with asynchronous things such us data fetching. It's waiting for name of action that usually used as string, and asynchronous function that returns some date. It's works as an action and we can react on it with our extraReducers.
     
     ---
     </details>
 
-4.  <details><summary>createApi</summary>
+6.  <details><summary>createApi</summary>
     It's a modern decision to implement more comfortable interaction with API. createApi is waiting for an object with settings such as reducerPath, baseQuery and endpoints.
 
     endpoints is a function that receive a builder object and should return an object with different methods based on current needs. It can be qurey to get something from server or mutation to send something to server.
@@ -621,14 +581,14 @@
     ---
     </details>
 
-3.  <details><summary>React Reconciliation</summary>
+4.  <details><summary>React Reconciliation</summary>
 
     It's a process of comparing the current tree with the work-in-progress tree, followed by an optimized way to commit the changes from the work-in-progress tree to the current tree. These changes are applied to the virtual DOM, resulting in the updated virtual DOM becoming the new current tree.
     
     ---
     </details>
 
-4.  <details><summary>Fiber</summary>
+5.  <details><summary>Fiber</summary>
 
     Fiber is a new conception since React 16 that provide a more effective way of reconciliation than earlier stack-based. 
     
@@ -658,7 +618,7 @@
     ---
     </details>
 
-5.  <details><summary>Parallel processes in React</summary>
+6.  <details><summary>Parallel processes in React</summary>
 
     Due to new conception as Fiber the React have an option to make state changes asynchronously and in more effective way.
     
@@ -712,21 +672,21 @@
     </details>
 
 
-4.  <details><summary>Pure Function</summary>
+5.  <details><summary>Pure Function</summary>
 
     That is function without side-effects (as a changing values out of function scope) and with same parameters always returns same expected and predictable values.
 
     ---
     </details>
 
-5.  <details><summary>lazy()</summary>
+6.  <details><summary>lazy()</summary>
 
     It's React built-in function that provides dynamical loading of components. Using lazy() we can separate our application on chunks that will loaded only when it will be required.
 
     ---
     </details>
 
-6.  <details><summary>Virtualisation</summary>
+7.  <details><summary>Virtualisation</summary>
 
     It's a concept with same behavior to lazy() function that allows us to load dynamicaly  list elements. 
     
@@ -735,28 +695,28 @@
     ---
     </details>
     
-7.  <details><summary>Image optimisation</summary>
+8.  <details><summary>Image optimisation</summary>
 
     s
 
     ---
     </details>
     
-8.  <details><summary>Reselect</summary>
+9.  <details><summary>Reselect</summary>
 
     s
 
     ---
     </details>
 
-9.  <details><summary>Web workers</summary>
+10. <details><summary>Web workers</summary>
 
     s
 
     ---
     </details>
 
-10. <details><summary>Bundle optimisation</summary>
+11. <details><summary>Bundle optimisation</summary>
 
     s
 
@@ -776,7 +736,7 @@
     ---
     </details>
 
-1.  <details><summary></summary>
+2.  <details><summary></summary>
 
     s
 
@@ -794,7 +754,7 @@
     ---
     </details>
 
-1.  <details><summary></summary>
+2.  <details><summary></summary>
 
     s
 
@@ -813,10 +773,273 @@
     ---
     </details>
 
-1.  <details><summary></summary>
+2.  <details><summary></summary>
 
     s
     
     ---
     </details>
 
+## Random questions
+
+[To top](#react-interview-questions)
+
+1.  <details><summary>Data types in JS</summary>
+
+    - Boolean
+    - String
+    - Number
+    - BigInt
+    - undefined
+    - null
+    - Object
+    - Symbol
+
+    ---
+    </details>
+
+2.  <details><summary>Differences between primitives and object</summary>
+
+    Primitives - they are simply values that can be assigned, changed, and replaced. They are not related to any other data with the same value and cannot be related.
+
+    Meanwhile, an Object - is a reference type, and assigning it means assigning a reference to this type. Any manipulations with values in it will be reflected in any other reference to this object.
+
+    Any different variables that contain the same primitive are comparable, while objects are not. Two different objects with the same fields and values will not be equal. 
+
+    ---
+    </details>
+
+2.  <details><summary>Array methods(5-6 examples)</summary>
+
+    - forEach - It's apply callback to each value of an array and returns undefined
+    - map - returns another array based on results of mapping one with received callback
+    - filter - It's a method that returns a new array that contains elements that was checked as trully by received callback
+    - sort - Returns modified array without creating another one sorted by received callback
+    - concat - returns another array based on array that calls this method with elements of received arrays.
+    - every - returns true if each element was chacked by callback as true
+    - some - returns true if some of elements was trully checked by callback
+    - fill - returns modified array that was filled by received values
+    - isArray - returns true if the type of received object is array
+    - pop - returns an element that was removed from the end of array that calls this method
+    - shift - returns an element that was removed from the start of array that calls this method
+    - push - returns modified array with added in the end received element
+    - unshift - returns modified array with received element in start 
+
+    ---
+    </details>
+
+
+1.  <details><summary>Difference between forEach and Map</summary>
+
+    Foreach is not modify array and returns nothing (undefined). It's only apply the function on each iteration with elements as arguments for this.
+
+    Meanwhile, Map returns new array based on provided callback that will be applied to each element and returns result of callback instead of previous element as a new element for new array.
+
+    ---
+    </details>
+
+2.  <details><summary>Difference between var and let. What problem solves let?</summary>
+
+    - function scope vs block scope
+    - var hoisted while let is not
+
+    The problem that solves let is a hoisting and function scope together.
+
+    ---
+    </details>
+
+3.  <details><summary>Difference between arrow function and function declaration</summary>
+
+    s
+
+    ---
+    </details>
+
+4.  <details><summary>Closure</summary>
+
+    s
+
+    ---
+    </details>
+
+5.  <details><summary>How iterate object keys</summary>
+
+    s
+
+    ---
+    </details>
+
+6.  <details><summary>Event Loop</summary>
+
+    s
+
+    ---
+    </details>
+
+7.  <details><summary>Asyncronious, microtasks and macrotasks</summary>
+
+    s
+
+    ---
+    </details>
+
+8.  <details><summary>Why do we need to use React and for what puposes it was invented</summary>
+
+    s
+
+    ---
+    </details>
+
+9.  <details><summary>Where we can use React(tricky) - reactNative, desktop applications(teams, slack)</summary>
+
+    s
+
+    ---
+    </details>
+
+10. <details><summary>How does JSX transform in JS</summary>
+
+    s
+
+    ---
+    </details>
+
+11. <details><summary>Could we provide a callback inside SetState function in class component?(tricky)</summary>
+
+    s
+
+    ---
+    </details>
+
+12. <details><summary>Can we change props?</summary>
+
+    s
+
+    ---
+    </details>
+
+13. <details><summary>Have we replace lifecycle methods from class components into function components?</summary>
+
+    s
+
+    ---
+    </details>
+
+14. <details><summary>How much hooks do you know?</summary>
+
+    s
+
+    ---
+    </details>
+
+15. <details><summary>What purposes for useRef?</summary>
+
+    s
+
+    ---
+    </details>
+
+16. <details><summary>Can we provide any data type into useRef?</summary>
+
+    s
+
+    ---
+    </details>
+
+17. <details><summary>Batching</summary>
+
+    s
+
+    ---
+    </details>
+
+18. <details><summary>Synthetic Event vs Browser Event</summary>
+
+    s
+
+    ---
+    </details>
+
+19. <details><summary>Context API. Which kind of problem it solves?</summary>
+
+    s
+
+    ---
+    </details>
+
+20. <details><summary>Everything you know about OOP</summary>
+
+    s
+
+    ---
+    </details>
+
+21. <details><summary>Browser getting URL, what's next?</summary>
+
+    s
+
+    ---
+    </details>
+
+22. <details><summary>Cookies, local and session storages</summary>
+
+    s
+
+    ---
+    </details>
+
+23. <details><summary>Everything you know about Fiber</summary>
+
+    s
+
+    ---
+    </details>
+
+24. <details><summary>Portals and propagation</summary>
+
+    s
+
+    ---
+    </details>
+
+25. <details><summary>Everyghing you know about Redux</summary>
+
+    s
+
+    ---
+    </details>
+
+26. <details><summary>What is a pure function</summary>
+
+    s
+
+    ---
+    </details>
+
+27. <details><summary>Is a function pure if it's logging something? </summary>
+
+    s
+
+    ---
+    </details>
+
+28. <details><summary>Which lifecycle methods may be replaced by useEffect</summary>
+
+    s
+
+    ---
+    </details>
+
+29. <details><summary>JS Cotext loses</summary>
+
+    s
+
+    ---
+    </details>
+
+30. <details><summary>Prototype inheritance and chaining</summary>
+
+    s
+
+    ---
+    </details>
