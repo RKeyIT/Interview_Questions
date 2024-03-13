@@ -54,6 +54,25 @@
 - Cookie - what the main difference between storages and cookies
 
 
+- Все что вы знаете про ООП
+- Что происходит, когда браузер получил URL
+- Хранилища данных: cookies, web storages
+- Все что вы знаете про Fiber
+- Расскажите как в portals происходит propagation
+- Перечислите все хуки
+- Зачем нужен useRef 
+- Все что вы знаете про Redux и его принципы
+- Что такое чистая функция
+-  Доп. вопрос: чистая ли, если что-то логирует  
+- Разница между Synthetic Event и браузерными событиями
+- Оптимизации: useMemo, useCallback
+- Какие методы жизненного цикла заменяет useEffect
+- Вопрос с трансляцией экрана: typeof
+- Вопрос с трансляцией экрана: приведение типов
+- Вопрос с трансляцией экрана: передача контекста
+- Вопрос с трансляцией экрана: цепочки наследования
+
+
 ## Lecture #1 - React basics #1
 
 [To top](#react-interview-questions)
@@ -665,61 +684,79 @@
 
 2.  <details><summary>useMemo & useCallback</summary>
    
-    s
+    They're 2 same hooks but useCallback is another layer of abstraction that was designed for functions to free us from using additional callback as a parameter of hook.
+
+    They're hooks that memoize values or results of some statements and prevent recalculations during rerendering processes that may provide more performance to our applications. 
+
+    useMemo and useCallback also have a dependency array and while values in it will not change the memoized entities will not be recalculated. Even if the parent component will be rerendered, memoized entities will be with previous values if dependencies will not changed.
     
     ---
     </details>
 
 3.  <details><summary>memo(component, arePropsEqual?)</summary>
 
-    s
+    It's a HOC to functional component that will prevent uneccessary rerenders and will rerender component only if props was changed.
+
+    It's another memoisation feature of react designed for components and the signature is a memo(component, compareFunction) when the compareFunction is a function to compare props between currents and previouses
     
     ---
     </details>
 
 4.  <details><summary>PureComponent</summary>
 
-    s
+    It's a class component extended from React.PureComponent instead of React.Component that shallowly compares props and state between currents and previouses and will rerender component only in case if the difference exists.
+
+    PureComponent prevent unneccessary rerenders while setState was called but the state was not changed
+
+    ---
+    </details>
+
+
+4.  <details><summary>Pure Function</summary>
+
+    That is function without side-effects (as a changing values out of function scope) and with same parameters always returns same expected and predictable values.
 
     ---
     </details>
 
 5.  <details><summary>lazy()</summary>
 
-    s
+    It's React built-in function that provides dynamical loading of components. Using lazy() we can separate our application on chunks that will loaded only when it will be required.
 
     ---
     </details>
 
 6.  <details><summary>Virtualisation</summary>
 
-    s
+    It's a concept with same behavior to lazy() function that allows us to load dynamicaly  list elements. 
+    
+    To prevent displaying not loaded items we can create a buffer zone that will not be in user viewport, but will content some amount of loaded additionaly items.
 
     ---
     </details>
-
-7.  <details><summary>Bundle optimisation</summary>
-
-    s
-
-    ---
-    </details>
-
-8.  <details><summary>Web workers</summary>
+    
+7.  <details><summary>Image optimisation</summary>
 
     s
 
     ---
     </details>
     
-9.  <details><summary>Image optimisation</summary>
+8.  <details><summary>Reselect</summary>
 
     s
 
     ---
     </details>
-    
-10. <details><summary>Reselect</summary>
+
+9.  <details><summary>Web workers</summary>
+
+    s
+
+    ---
+    </details>
+
+10. <details><summary>Bundle optimisation</summary>
 
     s
 
