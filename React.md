@@ -809,7 +809,7 @@
     ---
     </details>
 
-2.  <details><summary>Array methods(5-6 examples)</summary>
+3.  <details><summary>Array methods(5-6 examples)</summary>
 
     - forEach - It's apply callback to each value of an array and returns undefined
     - map - returns another array based on results of mapping one with received callback
@@ -828,8 +828,7 @@
     ---
     </details>
 
-
-1.  <details><summary>Difference between forEach and Map</summary>
+4.  <details><summary>Difference between forEach and Map</summary>
 
     Foreach is not modify array and returns nothing (undefined). It's only apply the function on each iteration with elements as arguments for this.
 
@@ -838,206 +837,273 @@
     ---
     </details>
 
-2.  <details><summary>Difference between var and let. What problem solves let?</summary>
+5.  <details><summary>Difference between var and let. What problem solves let?</summary>
 
     - function scope vs block scope
     - var hoisted while let is not
 
-    The problem that solves let is a hoisting and function scope together.
+    The problem that solves let is a hoisting and function scope together. The var can make a problems based on hoisting and rewrite some outer variable by undefined. There is unconsidering block scope.
 
     ---
     </details>
 
-3.  <details><summary>Difference between arrow function and function declaration</summary>
+6.  <details><summary>Difference between arrow function and function declaration</summary>
+
+    - this context
+    - new operator
+    - arguments
+    - implicit return
+
+    The arrow functions are have no their own this and considering that can not be used as a function constructors. Ofcourse it means that we can not call them by using new operator.
+
+    Arrow function have no its own arguments object while function declaration have.
+
+    Implicit return statement in arrow function if was not be used curly braces
+
+    ---
+    </details>
+
+7.  <details><summary>Closure</summary>
+
+    It's a combination of function and lexical environment within which it was declared. This technique allows us to save an access to outer scope variables in function even if outer function was stop they work.
+
+    ---
+    </details>
+
+8.  <details><summary>How to iterate object keys</summary>
+
+    - for in loop
+    - for off if the object have implements iterator
+    
+    Then we can use Object methods to create an array based on object entries and iterate this array.
+
+    - Object.keys()
+    - Object.getOwnPropertyNames()
+    - Object.entries()
+
+    ---
+    </details>
+
+9.  <details><summary>Event Loop explanation</summary>
+
+    In JavaScript, the event loop is a concept provided by the JavaScript runtime environment, such as browsers or Node.js, to handle asynchronous operations.
+
+    While synchronous code runs directly in the main thread of the runtime, asynchronous code is managed by the event loop. The event loop sorts and executes operations based on their nature.
+
+    The event loop operates together with other concepts, including the Call Stack, Microtask Queue, and Macrotask Queue.
+
+    - When code is executed, each statement is pushed onto the Call Stack. Synchronous code is executed immediately, while asynchronous tasks are added to their respective queues and await execution. 
+
+    - When the Call Stack is empty, Event Loop begins processing tasks in the Microtask Queue.
+
+    - Then the Event Loop goes to on one of Macrotasks and complete it. After that all of previous processes will be repeated
+
+
+    ---
+    </details>
+
+10. <details><summary>Asynchronous, microtasks and macrotasks</summary>
+
+    Asynchronous code is the code that will be completed outer from the main thread and will not block it.
+
+    This code used when the statement may not be completed immediately. It's can be as any interactions with an outer API such as file system or database, timers and others.
+
+    Microtasks are promises, mainly, but there are function QueueMicrotask() and MutationObserver conception and they're provide the ability to create the microtasks.
+
+    Meanwhile, macrotasks are everything others such as I/O operations, ajax requests, timers/intervals and event listeners
+
+    ---
+    </details>
+
+11. <details><summary>Why do we need to use React and for what purposes it was invented</summary>
+
+    React was designed to simplify creating and maintaining UIs for web applications based on component approach.
+
+    ---
+    </details>
+
+12. <details><summary>Where we can use React</summary>
+
+    It's a multiplatform library that can be used in WEB, Mobile and Desktop development due to additional libraries or frameworks.
+
+    Library: react-dom
+    Framewroks: React Native, Electron
+
+    ---
+    </details>
+
+13. <details><summary>How does JSX transform in JS</summary>
+
+    - Parsing
+    - Transformation
+    - Code Generation
+
+    Parsing JSX by parser that converts the JSX to an Abstract Syntax Tree (AST).
+
+    Then the AST transofrms into equivalent JavaScript code that in the end converts the JSX elements to JavaScript functions.
+
+    Finally, the transformed AST is converted back into JavaScript code. 
+
+    It's just converting from JSX syntax to JavaScript. 
+
+    ---
+    </details>
+
+14. <details><summary>Could we provide a callback inside SetState function in class component?(tricky)</summary>
+
+    Yes, but as the second argument that will calls after state changing. It's provide an ability to create some side effects based on state
+
+    ---
+    </details>
+
+15. <details><summary>Can we change props?</summary>
+
+    No, props are immutable and can be changed by related setState function.
+
+    ---
+    </details>
+
+16. <details><summary>Have we replace lifecycle methods from class components into function components?</summary>
+
+    Not directly, but we can simulate behavior by using useEffect hook. But it has it's own lifecycle instead of component lifecycle and it depends on dependencies array.
+
+    ---
+    </details>
+
+17. <details><summary>How much hooks do you know?</summary>
+
+    React: 
+
+    - useState
+    - useReducer
+    - useEffect
+    - useLayoutEffect
+    - useRef
+    - useImperativeHandle
+    - useContext
+    - useMemo
+    - useCallback
+    - useTransition
+    - useDefferedValue
+    - useId
+
+    Redux and RTK Query: 
+
+    - useSelector
+    - useDispatch
+    - useNavigate
+    - generated by createApi()
+
+
+    ---
+    </details>
+
+18. <details><summary>What purposes for useRef?</summary>
 
     s
 
     ---
     </details>
 
-4.  <details><summary>Closure</summary>
+19. <details><summary>Can we provide any data type into useRef?</summary>
 
     s
 
     ---
     </details>
 
-5.  <details><summary>How iterate object keys</summary>
+20. <details><summary>Batching</summary>
 
     s
 
     ---
     </details>
 
-6.  <details><summary>Event Loop</summary>
+21. <details><summary>Synthetic Event vs Browser Event</summary>
 
     s
 
     ---
     </details>
 
-7.  <details><summary>Asyncronious, microtasks and macrotasks</summary>
+22. <details><summary>Context API. Which kind of problem it solves?</summary>
 
     s
 
     ---
     </details>
 
-8.  <details><summary>Why do we need to use React and for what puposes it was invented</summary>
+23. <details><summary>Everything you know about OOP</summary>
 
     s
 
     ---
     </details>
 
-9.  <details><summary>Where we can use React(tricky) - reactNative, desktop applications(teams, slack)</summary>
+24. <details><summary>Browser getting URL, what's next?</summary>
 
     s
 
     ---
     </details>
 
-10. <details><summary>How does JSX transform in JS</summary>
+25. <details><summary>Cookies, local and session storages</summary>
 
     s
 
     ---
     </details>
 
-11. <details><summary>Could we provide a callback inside SetState function in class component?(tricky)</summary>
+26. <details><summary>Everything you know about Fiber</summary>
 
     s
 
     ---
     </details>
 
-12. <details><summary>Can we change props?</summary>
+27. <details><summary>Portals and propagation</summary>
 
     s
 
     ---
     </details>
 
-13. <details><summary>Have we replace lifecycle methods from class components into function components?</summary>
+28. <details><summary>Everyghing you know about Redux</summary>
 
     s
 
     ---
     </details>
 
-14. <details><summary>How much hooks do you know?</summary>
+29. <details><summary>What is a pure function</summary>
 
     s
 
     ---
     </details>
 
-15. <details><summary>What purposes for useRef?</summary>
+30. <details><summary>Is a function pure if it's logging something? </summary>
 
     s
 
     ---
     </details>
 
-16. <details><summary>Can we provide any data type into useRef?</summary>
+31. <details><summary>Which lifecycle methods may be replaced by useEffect</summary>
 
     s
 
     ---
     </details>
 
-17. <details><summary>Batching</summary>
+32. <details><summary>JS Cotext loses</summary>
 
     s
 
     ---
     </details>
 
-18. <details><summary>Synthetic Event vs Browser Event</summary>
-
-    s
-
-    ---
-    </details>
-
-19. <details><summary>Context API. Which kind of problem it solves?</summary>
-
-    s
-
-    ---
-    </details>
-
-20. <details><summary>Everything you know about OOP</summary>
-
-    s
-
-    ---
-    </details>
-
-21. <details><summary>Browser getting URL, what's next?</summary>
-
-    s
-
-    ---
-    </details>
-
-22. <details><summary>Cookies, local and session storages</summary>
-
-    s
-
-    ---
-    </details>
-
-23. <details><summary>Everything you know about Fiber</summary>
-
-    s
-
-    ---
-    </details>
-
-24. <details><summary>Portals and propagation</summary>
-
-    s
-
-    ---
-    </details>
-
-25. <details><summary>Everyghing you know about Redux</summary>
-
-    s
-
-    ---
-    </details>
-
-26. <details><summary>What is a pure function</summary>
-
-    s
-
-    ---
-    </details>
-
-27. <details><summary>Is a function pure if it's logging something? </summary>
-
-    s
-
-    ---
-    </details>
-
-28. <details><summary>Which lifecycle methods may be replaced by useEffect</summary>
-
-    s
-
-    ---
-    </details>
-
-29. <details><summary>JS Cotext loses</summary>
-
-    s
-
-    ---
-    </details>
-
-30. <details><summary>Prototype inheritance and chaining</summary>
+33. <details><summary>Prototype inheritance and chaining</summary>
 
     s
 
